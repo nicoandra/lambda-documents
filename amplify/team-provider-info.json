@@ -15,15 +15,25 @@
       "function": {
         "urlToPdf": {
           "deploymentBucketName": "amplify-urltopdf-dev-213857-deployment",
-          "s3Key": "amplify-builds/urlToPdf-6e302b58614c5a6b4750-build.zip"
+          "s3Key": "amplify-builds/urlToPdf-36696c2b4b5143616434-build.zip"
         },
         "urltopdfappDependencies": {
           "deploymentBucketName": "amplify-urltopdf-dev-213857-deployment",
           "s3Key": "amplify-builds/urltopdfappDependencies-LambdaLayerVersion27a4e920-build.zip"
+        },
+        "urlToPdfS3": {
+          "deploymentBucketName": "amplify-urltopdf-dev-213857-deployment",
+          "s3Key": "amplify-builds/urlToPdfS3-524a57677a6f446b3565-build.zip"
         }
       },
       "api": {
         "pdf": {}
+      },
+      "auth": {
+        "urltopdf95902364": {}
+      },
+      "storage": {
+        "s3Bucket": {}
       }
     }
   }

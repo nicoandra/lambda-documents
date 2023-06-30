@@ -9,16 +9,73 @@
           ],
           "category": "function",
           "resourceName": "urlToPdf"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "urlToPdfS3"
         }
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
     }
   },
+  "auth": {
+    "urltopdf95902364": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
   "function": {
     "urlToPdf": {
       "build": true,
       "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "urltopdfappDependencies"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "urlToPdfS3": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "s3Bucket"
+        },
         {
           "attributes": [
             "Arn"
@@ -37,6 +94,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_urlToPdfS3_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "urlToPdfS3"
+        }
+      ]
+    },
+    "AMPLIFY_function_urlToPdfS3_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "urlToPdfS3"
+        }
+      ]
+    },
     "AMPLIFY_function_urlToPdf_deploymentBucketName": {
       "usedBy": [
         {
@@ -68,6 +141,13 @@
           "resourceName": "urltopdfappDependencies"
         }
       ]
+    }
+  },
+  "storage": {
+    "s3Bucket": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

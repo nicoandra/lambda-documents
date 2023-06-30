@@ -1,0 +1,14 @@
+{
+  "resourceName": "s3Bucket",
+  "policyUUID": "d573c959",
+  "bucketName": "urltopdfe1b111bf520a493e993059a47009cc1f",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
