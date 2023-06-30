@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/pdf": {
+      "name": "/pdf",
+      "lambdaFunction": "urlToPdf",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

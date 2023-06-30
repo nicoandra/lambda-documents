@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-urltopdf-dev-213857-authRole",
+      "UnauthRoleArn": "arn:aws:iam::222432380591:role/amplify-urltopdf-dev-213857-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::222432380591:role/amplify-urltopdf-dev-213857-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-urltopdf-dev-213857-deployment",
+      "UnauthRoleName": "amplify-urltopdf-dev-213857-unauthRole",
+      "StackName": "amplify-urltopdf-dev-213857",
+      "StackId": "arn:aws:cloudformation:us-east-1:222432380591:stack/amplify-urltopdf-dev-213857/e222ba80-16e6-11ee-8a9f-0a2bb2a1c0ef",
+      "AmplifyAppId": "d353g3okmd7u8i"
+    },
+    "categories": {
+      "function": {
+        "urlToPdf": {
+          "deploymentBucketName": "amplify-urltopdf-dev-213857-deployment",
+          "s3Key": "amplify-builds/urlToPdf-6e302b58614c5a6b4750-build.zip"
+        },
+        "urltopdfappDependencies": {
+          "deploymentBucketName": "amplify-urltopdf-dev-213857-deployment",
+          "s3Key": "amplify-builds/urltopdfappDependencies-LambdaLayerVersion27a4e920-build.zip"
+        }
+      },
+      "api": {
+        "pdf": {}
+      }
+    }
+  }
+}

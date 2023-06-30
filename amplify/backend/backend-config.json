@@ -1,0 +1,73 @@
+{
+  "api": {
+    "pdf": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "urlToPdf"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "urlToPdf": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "urltopdfappDependencies"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "urltopdfappDependencies": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_urlToPdf_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "urlToPdf"
+        }
+      ]
+    },
+    "AMPLIFY_function_urlToPdf_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "urlToPdf"
+        }
+      ]
+    },
+    "AMPLIFY_function_urltopdfappDependencies_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "urltopdfappDependencies"
+        }
+      ]
+    },
+    "AMPLIFY_function_urltopdfappDependencies_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "urltopdfappDependencies"
+        }
+      ]
+    }
+  }
+}
